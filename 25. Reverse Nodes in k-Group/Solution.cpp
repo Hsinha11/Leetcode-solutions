@@ -8,6 +8,10 @@
  *     ListNode(int x, ListNode *next) : val(x), next(next) {}
  * };
  */
+// Approach: For each segment, find the k-th node. If fewer than k remain, stop.
+// Otherwise detach [ptr..kth], reverse it, and stitch it back between the
+// previous tail and the next segment's head. Repeat until done.
+// Time: O(n), Space: O(1) auxiliary (recursive reverse uses call stack).
 class Solution {
 public:
     ListNode* reverseLL(ListNode* head)
