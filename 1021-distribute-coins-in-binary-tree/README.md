@@ -30,3 +30,49 @@
 	<li><code>0 &lt;= Node.val &lt;= n</code></li>
 	<li>The sum of all <code>Node.val</code> is <code>n</code>.</li>
 </ul>
+
+<hr/>
+
+<h3>Approach</h3>
+<p>
+Use a postorder DFS to compute each subtree's <em>balance</em>: <code>balance = coins_in_subtree - nodes_in_subtree</code>.
+For a node, gather balances from left and right children; the number of moves contributed at this node is <code>|left_balance| + |right_balance|</code> because each surplus/deficit coin must traverse the edge to the parent. Return <code>node.val + left_balance + right_balance - 1</code> as the balance to its parent.
+</p>
+
+<h3>Complexity</h3>
+<ul>
+  <li><strong>Time:</strong> <code>O(n)</code> — visit each node once.</li>
+  <li><strong>Space:</strong> <code>O(h)</code> recursion stack, where <code>h</code> is tree height.</li>
+</ul>
+
+<h3>Reference Implementation (Python)</h3>
+
+```python
+from typing import Optional
+
+
+class TreeNode:
+    def __init__(self, val: int = 0, left: Optional['TreeNode'] = None, right: Optional['TreeNode'] = None):
+        self.val = val
+        self.left = left
+        self.right = right
+
+
+class Solution:
+    def distributeCoins(self, root: Optional[TreeNode]) -> int:
+        moves = 0
+
+        def postorder(node: Optional[TreeNode]) -> int:
+            nonlocal moves
+            if not node:
+                return 0
+
+            left_balance = postorder(node.left)
+            right_balance = postorder(node.right)
+
+            moves += abs(left_balance) + abs(right_balance)
+            return node.val + left_balance + right_balance - 1
+
+        postorder(root)
+        return moves
+```
