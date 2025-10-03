@@ -30,3 +30,12 @@ Output: `[3,2,1,4,5]`
 - The number of nodes in the list is `n`.
 - `1 <= k <= n <= 5000`
 - `0 <= Node.val <= 1000`
+
+### Approach
+
+We repeatedly locate the k-th node from the current segment. If fewer than k nodes remain, connect the rest as-is. Otherwise, detach the segment [ptr..kth], reverse it, connect it after the previous segment, and continue from the next segment's head. The helper performs standard linked-list reversal.
+
+### Complexity
+
+- Time: O(n) — each node is visited a constant number of times.
+- Space: O(1) — in-place reversal ignoring recursion stack (use iterative reverse for strict O(1)).
