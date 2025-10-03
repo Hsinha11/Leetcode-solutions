@@ -32,3 +32,57 @@
 	<li><code>1 &lt;= n &lt;= 2000</code></li>
 	<li><code>boxes[i]</code> is either <code>&#39;0&#39;</code> or <code>&#39;1&#39;</code>.</li>
 </ul>
+
+<hr/>
+
+<h3>Approach</h3>
+<p>
+We can compute the minimum operations for each position in two linear passes using prefix sums:
+</p>
+<ul>
+  <li>
+    Left-to-right: maintain <code>balls_on_left</code> (how many balls seen so far) and <code>moves_from_left</code> (total cost to move those balls to current index). At each index <code>i</code>, add <code>moves_from_left</code> to the answer, then update the counters.
+  </li>
+  <li>
+    Right-to-left: similarly maintain <code>balls_on_right</code> and <code>moves_from_right</code>, and add to the answer for each index.
+  </li>
+</ul>
+<p>
+This works because moving each ball by one step adds exactly one to the cost, and the two passes independently account for contributions from balls on each side.
+</p>
+
+<h3>Complexity</h3>
+<ul>
+  <li><strong>Time:</strong> <code>O(n)</code> — two linear passes.</li>
+  <li><strong>Space:</strong> <code>O(n)</code> for the output array, <code>O(1)</code> extra space.</li>
+</ul>
+
+<h3>Reference Implementation (Python)</h3>
+
+```python
+from typing import List
+
+
+class Solution:
+    def minOperations(self, boxes: str) -> List[int]:
+        n = len(boxes)
+        result: List[int] = [0] * n
+
+        balls_on_left = 0
+        moves_from_left = 0
+        for i in range(n):
+            result[i] += moves_from_left
+            if boxes[i] == '1':
+                balls_on_left += 1
+            moves_from_left += balls_on_left
+
+        balls_on_right = 0
+        moves_from_right = 0
+        for i in range(n - 1, -1, -1):
+            result[i] += moves_from_right
+            if boxes[i] == '1':
+                balls_on_right += 1
+            moves_from_right += balls_on_right
+
+        return result
+```
