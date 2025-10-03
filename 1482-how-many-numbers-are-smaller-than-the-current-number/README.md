@@ -37,3 +37,19 @@ For nums[4]=3 there exist three smaller numbers than it (1, 2 and 2).
 	<li><code>2 &lt;= nums.length &lt;= 500</code></li>
 	<li><code>0 &lt;= nums[i] &lt;= 100</code></li>
 </ul>
+
+<h3>Approach</h3>
+<p>
+Two common strategies:
+</p>
+<ul>
+  <li><strong>Counting Sort (O(n))</strong>: Since <code>0 \le nums[i] \le 100</code>, count frequencies in an array of size 101, build prefix sums, and map each value to the count of strictly smaller numbers.</li>
+  <li><strong>Sorting (O(n log n))</strong>: Copy and sort the array; the first index of each value equals how many numbers are smaller.</li>
+  
+</ul>
+
+<h3>Complexity</h3>
+<ul>
+  <li><strong>Counting Sort</strong>: Time <code>O(n)</code>, Space <code>O(1)</code> extra (since 101 is constant).</li>
+  <li><strong>Sorting</strong>: Time <code>O(n \log n)</code>, Space <code>O(n)</code>.</li>
+</ul>
