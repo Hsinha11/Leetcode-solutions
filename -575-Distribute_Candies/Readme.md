@@ -36,3 +36,12 @@ Use a set to find the number of unique candy types.
 Determine Maximum Types:
 
 The maximum number of different types you can eat is either the total number of unique types or half the total number of candies, whichever is smaller.
+
+---
+
+### Approach
+Use a set to count unique candy types, then return the minimum of that count and n // 2 (the allowed number of candies). This guarantees the maximum distinct types eaten under the constraint of taking only half of the candies.
+
+### Complexity
+- Time: O(n) to build the set of unique types
+- Space: O(n) for the set
