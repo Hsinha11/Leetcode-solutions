@@ -30,3 +30,22 @@
 	<li><code>2 &lt;= arr.length &lt;= 500</code></li>
 	<li><code>-10<sup>3</sup> &lt;= arr[i] &lt;= 10<sup>3</sup></code></li>
 </ul>
+
+<h3>Approach</h3>
+<p>
+We iterate through the array while maintaining a hash structure of previously seen values.
+For each current value <code>x</code>, we check:
+</p>
+<ul>
+  <li>If <code>2 * x</code> exists among seen values, then the earlier value is double of <code>x</code>.</li>
+  <li>If <code>x</code> is even and <code>x / 2</code> exists among seen values, then the earlier value is half of <code>x</code>.</li>
+  <li>If either condition is true, return <code>true</code>. Otherwise, add <code>x</code> to the seen set and continue.</li>
+  <li>This logic correctly handles zeros and negative values.</li>
+  
+</ul>
+
+<h3>Complexity</h3>
+<ul>
+  <li><strong>Time</strong>: <code>O(n)</code> — each value is processed once with constant average-time lookups.</li>
+  <li><strong>Space</strong>: <code>O(n)</code> — storing up to <code>n</code> seen values.</li>
+</ul>
