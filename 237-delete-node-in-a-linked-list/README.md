@@ -13,6 +13,7 @@
 	<li>All the values after <code>node</code> should be in the same order.</li>
 </ul>
 
+
 <p><strong>Custom testing:</strong></p>
 
 <ul>
@@ -46,4 +47,18 @@
 	<li><code>-1000 &lt;= Node.val &lt;= 1000</code></li>
 	<li>The value of each node in the list is <strong>unique</strong>.</li>
 	<li>The <code>node</code> to be deleted is <strong>in the list</strong> and is <strong>not a tail</strong> node.</li>
+</ul>
+
+<h3>Approach</h3>
+<p>
+We are given only the node to delete, not the head. Copy the value of the <code>next</code>
+node into the current node and then bypass the <code>next</code> node by setting
+<code>node.next = node.next.next</code>. This effectively removes the next node from the list,
+which achieves the desired effect of deleting the given node while preserving order.
+</p>
+
+<h3>Complexity</h3>
+<ul>
+  <li><strong>Time</strong>: <code>O(1)</code></li>
+  <li><strong>Space</strong>: <code>O(1)</code></li>
 </ul>
