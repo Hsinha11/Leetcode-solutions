@@ -1,3 +1,6 @@
+// Approach: Copy and sort the array. For each value, its first index in the
+// sorted array equals the count of elements strictly smaller than it.
+// Time: O(n log n), Space: O(n). (Alternative O(n) counting sort uses value range 0..100)
 class Solution {
 public:
     vector<int> smallerNumbersThanCurrent(vector<int>& nums) {
