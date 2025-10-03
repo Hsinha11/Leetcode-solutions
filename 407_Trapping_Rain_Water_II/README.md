@@ -67,7 +67,7 @@ heightMap = [[3,3,3,3,3],
 ## Solution
 
 - Optimized with a complexity of `O(m * n * log(m * n))`.
-- Includes solutions in **C++** and **Java**.
+- Includes solutions in **C++** , **Java** and **Python**.
 - Code is commented for clarity and understanding.
 
 ## Notes
