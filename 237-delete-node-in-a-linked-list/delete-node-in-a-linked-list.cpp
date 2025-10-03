@@ -6,6 +6,10 @@
  *     ListNode(int x) : val(x), next(NULL) {}
  * };
  */
+// Approach: Copy value from next node into current, then bypass next node by
+// setting current->next = current->next->next. This removes the next node,
+// which is equivalent to deleting the given node when head isn't available.
+// Time: O(1), Space: O(1)
 class Solution {
     
 public:
