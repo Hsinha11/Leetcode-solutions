@@ -37,3 +37,40 @@ Note that you cannot buy on day 1, buy on day 2 and sell them later, as you are 
 	<li><code>1 &lt;= prices.length &lt;= 10<sup>5</sup></code></li>
 	<li><code>0 &lt;= prices[i] &lt;= 10<sup>5</sup></code></li>
 </ul>
+
+<hr/>
+
+<h3>Approach</h3>
+<p>
+Use a 2-transaction state machine tracked in O(1) space:
+Maintain <code>buy1</code>, <code>profit1</code>, <code>buy2</code>, <code>profit2</code>. For each price:
+<code>buy1 = min(buy1, price)</code>, <code>profit1 = max(profit1, price - buy1)</code>,
+<code>buy2 = min(buy2, price - profit1)</code>, <code>profit2 = max(profit2, price - buy2)</code>.
+The final answer is <code>profit2</code>.
+</p>
+
+<h3>Complexity</h3>
+<ul>
+  <li><strong>Time:</strong> <code>O(n)</code></li>
+  <li><strong>Space:</strong> <code>O(1)</code></li>
+</ul>
+
+<h3>Reference Implementation (Python)</h3>
+
+```python
+from typing import List
+
+
+class Solution:
+    def maxProfit(self, prices: List[int]) -> int:
+        buy1 = buy2 = float('inf')
+        profit1 = profit2 = 0
+
+        for price in prices:
+            buy1 = min(buy1, price)
+            profit1 = max(profit1, price - buy1)
+            buy2 = min(buy2, price - profit1)
+            profit2 = max(profit2, price - buy2)
+
+        return profit2
+```
