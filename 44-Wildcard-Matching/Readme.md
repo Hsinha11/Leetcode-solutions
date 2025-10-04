@@ -51,8 +51,12 @@ The algorithm follows these steps:
 
 ### Complexity Analysis
 
-- **Time Complexity**: O(m + n), where `m` is the length of the string `s` and `n` is the length of the pattern `p`.
-- **Space Complexity**: O(1), since the algorithm uses a constant amount of extra space.
+- **Time Complexity**: Average O(m + n), worst-case O(m · n) due to backtracking.
+- **Space Complexity**: O(1) extra space.
+
+### Python Reference
+
+See `wildcard-matching.py` for the greedy backtracking implementation.
 
 ### Conclusion
 
