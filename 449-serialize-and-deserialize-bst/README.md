@@ -20,3 +20,30 @@
 	<li><code>0 &lt;= Node.val &lt;= 10<sup>4</sup></code></li>
 	<li>The input tree is <strong>guaranteed</strong> to be a binary search tree.</li>
 </ul>
+
+<hr/>
+
+<h3>Approach</h3>
+<p>
+We serialize the BST using <strong>preorder traversal</strong> (root-left-right), storing only the values as a compact space-separated string. To deserialize, we consume the preorder sequence while enforcing <strong>BST bounds</strong> (<code>min</code>, <code>max</code>) for each subtree. Each value belongs to exactly one interval and is used once, which reconstructs the original BST in linear time.
+</p>
+
+<h4>Steps</h4>
+<ol>
+  <li><strong>Serialize:</strong> Do a preorder DFS and append node values; join by spaces.</li>
+  <li><strong>Deserialize:</strong> Build the tree by reading values in order and recursing with bounds:
+    <ul>
+      <li>Left subtree allowed range: <code>(min, root.val)</code></li>
+      <li>Right subtree allowed range: <code>(root.val, max)</code></li>
+    </ul>
+  </li>
+</ol>
+
+<h4>Complexity</h4>
+<ul>
+  <li><strong>Time:</strong> <code>O(n)</code> for both serialize and deserialize.</li>
+  <li><strong>Space:</strong> <code>O(n)</code> for output and recursion stack in the worst case.</li>
+</ul>
+
+<h4>Python Reference</h4>
+<p>See <code>serialize-and-deserialize-bst.py</code> in this folder.</p>
