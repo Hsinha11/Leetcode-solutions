@@ -44,3 +44,7 @@ We use a **BFS-based shortest path algorithm** (similar to Bellman-Ford) to find
 3. Maintain a `dist` array to record the minimum cost to reach each node.  
 4. For each node, relax all adjacent edges if a cheaper route is found and push the updated state into the queue.  
 5. After traversing up to `k` levels, return the minimum cost to reach `dst`, or `-1` if unreachable.
+
+## 🧩 Complexity
+- **Time Complexity:** O(E * K), where E = number of flights  
+- **Space Complexity:** O(N + E), for adjacency list and distance array  
