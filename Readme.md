@@ -1,6 +1,5 @@
 
 # LeetCode Solutions 📊
-
 ![LeetCode](https://img.shields.io/badge/LeetCode-Solutions-brightgreen) ![Python](https://img.shields.io/badge/Python-3.10-blue) ![Hacktoberfest](https://img.shields.io/badge/Hacktoberfest-2025-orange)
 
 Welcome to my **LeetCode solutions repository**! This is a comprehensive collection showcasing problem-solving journey across various topics and difficulty levels. **This repository is open for Hacktoberfest 2025 contributions!** 🎉
@@ -108,7 +107,7 @@ git commit -m "Add solution for Problem #123: Problem Name"
 # Push to your fork
 git push origin solution/problem-name
 ```
-5. Create a Pull Request from your fork to this repository
+
 
 ### 🚨 **Contribution Guidelines - READ CAREFULLY**
 
@@ -189,5 +188,6 @@ By participating in this project, you agree to maintain a respectful and inclusi
 **Happy Coding! Let's make this Hacktoberfest amazing together! 🚀**
 
 *Remember: The goal is to learn, contribute, and grow together as a community. Every contribution, no matter how small, makes a difference!*
+
 
 
