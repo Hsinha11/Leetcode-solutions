@@ -8,7 +8,7 @@ class Solution:
             else:
                 c = c+1
 
-        if(c>0):
+        if(c>0): 
             return False
         else:
             return True
