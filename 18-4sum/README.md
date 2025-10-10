@@ -31,3 +31,19 @@
 	<li><code>-10<sup>9</sup> &lt;= nums[i] &lt;= 10<sup>9</sup></code></li>
 	<li><code>-10<sup>9</sup> &lt;= target &lt;= 10<sup>9</sup></code></li>
 </ul>
+
+---
+
+### Solutions Available
+- `4sum.py` — Python
+- `4sum.cpp` — C++
+
+### Approach
+- Sort the array and fix two indices `i` and `j`.
+- Use two pointers `l` and `r` to find pairs summing to `target - nums[i] - nums[j]`.
+- Skip duplicates for `i`, `j`, `l`, and `r`.
+- Use 64-bit arithmetic during sum to avoid overflow.
+
+### Complexity
+- Time: `O(n^3)`
+- Space: `O(1)` extra (excluding output)
