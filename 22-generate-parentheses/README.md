@@ -14,3 +14,17 @@
 <ul>
 	<li><code>1 &lt;= n &lt;= 8</code></li>
 </ul>
+
+---
+
+### Solutions Available
+- `generate-parentheses.py` — Python
+- `generate-parentheses.cpp` — C++
+
+### Approach
+- Backtracking with counts of `open` and `close` parentheses used so far.
+- Add '(' if `open < n`; add ')' if `close < open`.
+
+### Complexity
+- Time: O(Catalan(n))
+- Space: O(n) recursion depth (excluding output)
