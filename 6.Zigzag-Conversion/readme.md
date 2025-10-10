@@ -37,3 +37,17 @@ Constraints:
 1 <= s.length <= 1000
 s consists of English letters (lower-case and upper-case), ',' and '.'.
 1 <= numRows <= 1000
+
+---
+
+### Solutions Available
+- `zigzag-conversion.py` — Python
+- `zigzag-conversion.cpp` — C++
+
+### Approach (both)
+- Simulate writing characters across rows, toggling direction when hitting the first or last row.
+- Concatenate rows to form the result.
+
+### Complexity
+- Time: `O(n)` where `n = len(s)`
+- Space: `O(n)` for storing row strings
