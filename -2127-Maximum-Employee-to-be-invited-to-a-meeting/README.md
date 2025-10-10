@@ -1,25 +1,23 @@
 # LeetCode 2127: Maximum Number of Employees in a Meeting
 
-## Problem Statement
-LeetCode Problem **2127 - Maximum Number of Employees in a Meeting** requires finding the maximum number of employees that can be invited to a meeting based on a given directed graph representing a management structure.
+## Problem Link
+- [LeetCode 2127: Maximum Number of Employees in a Meeting](https://leetcode.com/problems/maximum-number-of-employees-in-a-meeting/)
 
-## Solution Overview
-This folder contains a Python solution for the problem, implementing an **optimized graph-based approach** using **strongly connected components (SCC)** and **cycle detection**.
+## Solutions Available
+- `Maximum_Employee.py` — Python
+- `Maximum_Employee.cpp` — C++
 
-### Approach:
-1. **Graph Representation**: The input is treated as a directed graph where each employee points to their direct manager.
-2. **Cycle Detection**: The solution identifies cycles in the graph, as cyclic dependencies determine the meeting group sizes.
-3. **Longest Path Calculation**: For non-cyclic components, the longest chain leading into cycles is computed to maximize attendance.
-4. **Result Computation**: The answer is determined based on the largest strongly connected component or the combination of longest chains into cycles.
+## Approach (both implementations)
+We treat `favorite[i]` as a directed graph where each node has out-degree 1.
 
+- Detect and remove nodes not in any cycle using a queue on nodes with `indegree == 0`, computing the longest chain length feeding into each node.
+- Remaining nodes form cycles. The answer is the maximum of:
+  - The longest cycle length, and
+  - The sum over all mutual pairs (2-cycles `a <-> b`) of `2 + depth[a] + depth[b]`.
 
-## Complexity Analysis
-- **Time Complexity**: `O(N)`, where `N` is the number of employees (nodes in the graph), leveraging **DFS-based cycle detection** and **longest path computation**.
-- **Space Complexity**: `O(N)`, due to the adjacency list representation of the graph and auxiliary structures.
+## Complexity
+- Time: `O(N)`
+- Space: `O(N)`
 
-## References
-- [LeetCode Problem 2127](https://leetcode.com/problems/maximum-number-of-employees-in-a-meeting/)
-
-
- 
-
+## Notes
+- The C++ file includes a small `main` for quick local testing; remove it for LeetCode submission or wrap with `#ifndef ONLINE_JUDGE` if preferred.
