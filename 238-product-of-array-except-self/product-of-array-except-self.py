@@ -1,20 +1,22 @@
+# Product of Array Except Self - LeetCode #238
+
+from typing import List
+
 class Solution:
     def productExceptSelf(self, nums: List[int]) -> List[int]:
-        n=len(nums)
-        left=[1]*n
-        right=[1]*n
-        # left[0]=1
-        # right[n-1]=1
-
-        for i in range(1,n):
-            left[i]=nums[i-1]*left[i-1]
-        # print(left)
-        for i in range(n-2,-1,-1):
-            right[i]=nums[i+1]*right[i+1]
-        res=[0]*n
+        n = len(nums)
+        result = [0] * n
+        
+        # Left products
+        left = 1
         for i in range(n):
-            res[i]=left[i]*right[i]
-        return res
-
+            result[i] = left
+            left *= nums[i]
         
+        # Right products
+        right = 1
+        for i in range(n-1, -1, -1):
+            result[i] *= right
+            right *= nums[i]
         
+        return result
