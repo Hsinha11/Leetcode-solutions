@@ -8,7 +8,6 @@ class Solution(object):
         # Sort both arrays
         nums1.sort()
         nums2.sort()
-
         # Initialize two pointers
         N = len(nums1)
         M = len(nums2)

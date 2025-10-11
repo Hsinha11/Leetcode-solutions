@@ -15,7 +15,6 @@ Given two integer arrays nums1 and nums2, return an array of their intersection.
 1 <= nums1.length, nums2.length <= 1000
 0 <= nums1[i], nums2[i] <= 1000
 
-
 ## Approach
 1. Sort `nums1` and `nums2` arrays.
 2. Create a pointer for each array, initially set to 0.
