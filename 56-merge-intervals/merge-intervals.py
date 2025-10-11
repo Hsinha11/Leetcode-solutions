@@ -1,13 +1,21 @@
+# Merge Intervals - LeetCode #56
+
+from typing import List
+
 class Solution:
     def merge(self, intervals: List[List[int]]) -> List[List[int]]:
-        merged = []
-        intervals.sort()
-        temp = intervals[0]
-        for i in intervals:
-            if i[0]<=temp[1]:
-                temp[1]= max(i[1],temp[1])
+        if not intervals:
+            return []
+        
+        intervals.sort(key=lambda x: x[0])
+        
+        result = [intervals[0]]
+        
+        for interval in intervals:
+            current = result[-1]
+            if interval[0] <= current[1]:
+                current[1] = max(current[1], interval[1])
             else:
-                merged.append(temp)
-                temp = i
-        merged.append(temp)
-        return merged
+                result.append(interval)
+        
+        return result

@@ -1,45 +1,83 @@
-<h2><a href="https://leetcode.com/problems/merge-k-sorted-lists">Merge k Sorted Lists</a></h2> <img src='https://img.shields.io/badge/Difficulty-Hard-red' alt='Difficulty: Hard' /><hr><p>You are given an array of <code>k</code> linked-lists <code>lists</code>, each linked-list is sorted in ascending order.</p>
+# Merge k Sorted Lists - Problem #23
 
-<p><em>Merge all the linked-lists into one sorted linked-list and return it.</em></p>
+## Problem Statement
+You are given an array of `k` linked-lists `lists`, each linked-list is sorted in ascending order.
 
-<p>&nbsp;</p>
-<p><strong class="example">Example 1:</strong></p>
+Merge all the linked-lists into one sorted linked-list and return it.
 
-<pre>
-<strong>Input:</strong> lists = [[1,4,5],[1,3,4],[2,6]]
-<strong>Output:</strong> [1,1,2,3,4,4,5,6]
-<strong>Explanation:</strong> The linked-lists are:
+## Examples
+```
+Input: lists = [[1,4,5],[1,3,4],[2,6]]
+Output: [1,1,2,3,4,4,5,6]
+Explanation: The linked-lists are:
 [
-  1-&gt;4-&gt;5,
-  1-&gt;3-&gt;4,
-  2-&gt;6
+  1->4->5,
+  1->3->4,
+  2->6
 ]
-merging them into one sorted linked list:
-1-&gt;1-&gt;2-&gt;3-&gt;4-&gt;4-&gt;5-&gt;6
-</pre>
+merging them into one sorted list:
+1->1->2->3->4->4->5->6
+```
 
-<p><strong class="example">Example 2:</strong></p>
+## Approach
+**Key Insight**: Use min-heap to always get the smallest node from k lists.
 
-<pre>
-<strong>Input:</strong> lists = []
-<strong>Output:</strong> []
-</pre>
+**Algorithm**:
+1. Initialize min-heap with first node of each list
+2. Create dummy node
+3. While heap not empty:
+   - Pop smallest node, add to result
+   - If has next, push next to heap
+4. Return dummy.next
 
-<p><strong class="example">Example 3:</strong></p>
+**Why this works**:
+- Heap always gives smallest
+- O(n log k) time, n total nodes
+- Efficient for merging
 
-<pre>
-<strong>Input:</strong> lists = [[]]
-<strong>Output:</strong> []
-</pre>
+## Complexity Analysis
+- **Time Complexity**: O(n log k)
+- **Space Complexity**: O(k)
 
-<p>&nbsp;</p>
-<p><strong>Constraints:</strong></p>
+## Key Insights
+- Priority queue for merging
+- Handles empty lists
+- Preserves order
 
-<ul>
-	<li><code>k == lists.length</code></li>
-	<li><code>0 &lt;= k &lt;= 10<sup>4</sup></code></li>
-	<li><code>0 &lt;= lists[i].length &lt;= 500</code></li>
-	<li><code>-10<sup>4</sup> &lt;= lists[i][j] &lt;= 10<sup>4</sup></code></li>
-	<li><code>lists[i]</code> is sorted in <strong>ascending order</strong>.</li>
-	<li>The sum of <code>lists[i].length</code> will not exceed <code>10<sup>4</sup></code>.</li>
-</ul>
+## Alternative Approaches
+1. **Divide and Conquer**: Pairwise merge
+2. **Brute Force**: Collect all, sort
+
+## Solutions in Different Languages
+
+### Java
+```java
+// ... code ...
+```
+
+### JavaScript
+```javascript
+// ... code ...
+```
+
+### Python
+```python
+# ... code ...
+```
+
+## Test Cases
+```
+Test Case 1: [[1,4,5],[1,3,4],[2,6]] -> [1,1,2,3,4,4,5,6]
+Test Case 2: [] -> []
+```
+
+## Edge Cases
+1. All empty lists
+2. One list
+3. Lists with one node
+4. k=0
+
+## Follow-up Questions
+1. What if merge sorted arrays?
+2. What if external sort?
+3. What if find median?

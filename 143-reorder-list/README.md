@@ -1,36 +1,79 @@
-<h2><a href="https://leetcode.com/problems/reorder-list">Reorder List</a></h2> <img src='https://img.shields.io/badge/Difficulty-Medium-orange' alt='Difficulty: Medium' /><hr><p>You are given the head of a singly linked-list. The list can be represented as:</p>
+# Reorder List - Problem #143
 
-<pre>
-L<sub>0</sub> &rarr; L<sub>1</sub> &rarr; &hellip; &rarr; L<sub>n - 1</sub> &rarr; L<sub>n</sub>
-</pre>
+## Problem Statement
+You are given the head of a singly linked-list. The list can be represented as:
 
-<p><em>Reorder the list to be on the following form:</em></p>
+L0 → L1 → … → Ln - 1 → Ln
+Reorder the list to be on the following form:
 
-<pre>
-L<sub>0</sub> &rarr; L<sub>n</sub> &rarr; L<sub>1</sub> &rarr; L<sub>n - 1</sub> &rarr; L<sub>2</sub> &rarr; L<sub>n - 2</sub> &rarr; &hellip;
-</pre>
+L0 → Ln → L1 → Ln - 1 → L2 → Ln - 2 → …
+You may not modify the values in the list's nodes. Only nodes themselves may be changed.
 
-<p>You may not modify the values in the list&#39;s nodes. Only nodes themselves may be changed.</p>
+## Examples
+```
+Input: head = [1,2,3,4]
+Output: [1,4,2,3]
 
-<p>&nbsp;</p>
-<p><strong class="example">Example 1:</strong></p>
-<img alt="" src="https://assets.leetcode.com/uploads/2021/03/04/reorder1linked-list.jpg" style="width: 422px; height: 222px;" />
-<pre>
-<strong>Input:</strong> head = [1,2,3,4]
-<strong>Output:</strong> [1,4,2,3]
-</pre>
+Input: head = [1,2,3,4,5]
+Output: [1,5,2,4,3]
+```
 
-<p><strong class="example">Example 2:</strong></p>
-<img alt="" src="https://assets.leetcode.com/uploads/2021/03/09/reorder2-linked-list.jpg" style="width: 542px; height: 222px;" />
-<pre>
-<strong>Input:</strong> head = [1,2,3,4,5]
-<strong>Output:</strong> [1,5,2,4,3]
-</pre>
+## Approach
+**Key Insight**: Find middle, reverse second half, then merge alternately.
 
-<p>&nbsp;</p>
-<p><strong>Constraints:</strong></p>
+**Algorithm**:
+1. Find middle with slow/fast pointers
+2. Reverse the second half
+3. Merge first and reversed second alternately
 
-<ul>
-	<li>The number of nodes in the list is in the range <code>[1, 5 * 10<sup>4</sup>]</code>.</li>
-	<li><code>1 &lt;= Node.val &lt;= 1000</code></li>
-</ul>
+**Why this works**:
+- O(n) time
+- O(1) space
+- Modifies pointers in place
+
+## Complexity Analysis
+- **Time Complexity**: O(n)
+- **Space Complexity**: O(1)
+
+## Key Insights
+- Slow/fast for middle
+- Standard reverse list
+- Careful merge to avoid cycles
+
+## Alternative Approaches
+1. **Use Stack**: Push second half, pop and insert
+2. **Recursion**: But higher space
+
+## Solutions in Different Languages
+
+### Java
+```java
+// ... code ...
+```
+
+### JavaScript
+```javascript
+// ... code ...
+```
+
+### Python
+```python
+# ... code ...
+```
+
+## Test Cases
+```
+Test Case 1: [1,2,3,4] -> [1,4,2,3]
+Test Case 2: [1,2,3,4,5] -> [1,5,2,4,3]
+```
+
+## Edge Cases
+1. Empty list
+2. Single node
+3. Two nodes
+4. Odd/even length
+
+## Follow-up Questions
+1. What if reorder in different pattern?
+2. What if k-way reorder?
+3. What if circular list?

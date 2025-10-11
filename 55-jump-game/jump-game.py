@@ -1,10 +1,16 @@
+# Jump Game - LeetCode #55
+
+from typing import List
+
 class Solution:
     def canJump(self, nums: List[int]) -> bool:
-        i=0 
-        maxreach =0
-        n=len(nums)
-        while i<n and i<=maxreach:
-            maxreach = max(maxreach, i+nums[i])
-            i+=1
-        return i==n
-                    
+        max_reach = 0
+        
+        for i in range(len(nums)):
+            if i > max_reach:
+                return False
+            max_reach = max(max_reach, i + nums[i])
+            if max_reach >= len(nums) - 1:
+                return True
+        
+        return True
