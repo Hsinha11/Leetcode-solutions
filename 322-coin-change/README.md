@@ -1,37 +1,79 @@
-<h2><a href="https://leetcode.com/problems/coin-change">Coin Change</a></h2> <img src='https://img.shields.io/badge/Difficulty-Medium-orange' alt='Difficulty: Medium' /><hr><p>You are given an integer array <code>coins</code> representing coins of different denominations and an integer <code>amount</code> representing a total amount of money.</p>
+# Coin Change - Problem #322
 
-<p>Return <em>the fewest number of coins that you need to make up that amount</em>. If that amount of money cannot be made up by any combination of the coins, return <code>-1</code>.</p>
+## Problem Statement
+You are given an integer array `coins` representing coins of different denominations and an integer `amount` representing a total amount of money.
 
-<p>You may assume that you have an infinite number of each kind of coin.</p>
+Return the fewest number of coins that you need to make up that amount. If that amount of money cannot be made up by any combination of the coins, return -1.
 
-<p>&nbsp;</p>
-<p><strong class="example">Example 1:</strong></p>
+You may assume that you have an infinite number of each kind of coin.
 
-<pre>
-<strong>Input:</strong> coins = [1,2,5], amount = 11
-<strong>Output:</strong> 3
-<strong>Explanation:</strong> 11 = 5 + 5 + 1
-</pre>
+## Examples
+```
+Input: coins = [1,2,5], amount = 11
+Output: 3
+Explanation: 11 = 5 + 5 + 1
 
-<p><strong class="example">Example 2:</strong></p>
+Input: coins = [2], amount = 3
+Output: -1
+```
 
-<pre>
-<strong>Input:</strong> coins = [2], amount = 3
-<strong>Output:</strong> -1
-</pre>
+## Approach
+**Key Insight**: Unbounded knapsack DP to find minimum coins.
 
-<p><strong class="example">Example 3:</strong></p>
+**Algorithm**:
+1. dp[i] = min coins for amount i
+2. Initialize dp[0]=0, others=INF
+3. For each coin, update dp for amounts >= coin
+4. Return dp[amount] if not INF else -1
 
-<pre>
-<strong>Input:</strong> coins = [1], amount = 0
-<strong>Output:</strong> 0
-</pre>
+**Why this works**:
+- Bottom-up DP
+- O(amount * coins) time
+- Handles unlimited coins
 
-<p>&nbsp;</p>
-<p><strong>Constraints:</strong></p>
+## Complexity Analysis
+- **Time Complexity**: O(amount * coins.length)
+- **Space Complexity**: O(amount)
 
-<ul>
-	<li><code>1 &lt;= coins.length &lt;= 12</code></li>
-	<li><code>1 &lt;= coins[i] &lt;= 2<sup>31</sup> - 1</code></li>
-	<li><code>0 &lt;= amount &lt;= 10<sup>4</sup></code></li>
-</ul>
+## Key Insights
+- Like unbounded knapsack
+- Order of loops important
+- Handles no solution case
+
+## Alternative Approaches
+1. **DFS with Memo**: Top-down
+2. **BFS**: Level order search
+
+## Solutions in Different Languages
+
+### Java
+```java
+// ... code ...
+```
+
+### JavaScript
+```javascript
+// ... code ...
+```
+
+### Python
+```python
+# ... code ...
+```
+
+## Test Cases
+```
+Test Case 1: [1,2,5], 11 -> 3
+Test Case 2: [2], 3 -> -1
+```
+
+## Edge Cases
+1. amount=0
+2. No coins
+3. Amount not makeable
+4. Single coin
+
+## Follow-up Questions
+1. What if limited coins?
+2. What if find number of ways?
+3. What if print combination?

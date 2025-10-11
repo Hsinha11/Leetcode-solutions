@@ -1,38 +1,87 @@
-<h2><a href="https://leetcode.com/problems/number-of-islands">Number of Islands</a></h2> <img src='https://img.shields.io/badge/Difficulty-Medium-orange' alt='Difficulty: Medium' /><hr><p>Given an <code>m x n</code> 2D binary grid <code>grid</code> which represents a map of <code>&#39;1&#39;</code>s (land) and <code>&#39;0&#39;</code>s (water), return <em>the number of islands</em>.</p>
+# Number of Islands - Problem #200
 
-<p>An <strong>island</strong> is surrounded by water and is formed by connecting adjacent lands horizontally or vertically. You may assume all four edges of the grid are all surrounded by water.</p>
+## Problem Statement
+Given an `m x n` 2D binary grid `grid` which represents a map of '1's (land) and '0's (water), return the number of islands.
 
-<p>&nbsp;</p>
-<p><strong class="example">Example 1:</strong></p>
+An island is surrounded by water and is formed by connecting adjacent lands horizontally or vertically. You may assume all four edges of the grid are all surrounded by water.
 
-<pre>
-<strong>Input:</strong> grid = [
-  [&quot;1&quot;,&quot;1&quot;,&quot;1&quot;,&quot;1&quot;,&quot;0&quot;],
-  [&quot;1&quot;,&quot;1&quot;,&quot;0&quot;,&quot;1&quot;,&quot;0&quot;],
-  [&quot;1&quot;,&quot;1&quot;,&quot;0&quot;,&quot;0&quot;,&quot;0&quot;],
-  [&quot;0&quot;,&quot;0&quot;,&quot;0&quot;,&quot;0&quot;,&quot;0&quot;]
+## Examples
+```
+Input: grid = [
+  ["1","1","1","1","0"],
+  ["1","1","0","1","0"],
+  ["1","1","0","0","0"],
+  ["0","0","0","0","0"]
 ]
-<strong>Output:</strong> 1
-</pre>
+Output: 1
 
-<p><strong class="example">Example 2:</strong></p>
-
-<pre>
-<strong>Input:</strong> grid = [
-  [&quot;1&quot;,&quot;1&quot;,&quot;0&quot;,&quot;0&quot;,&quot;0&quot;],
-  [&quot;1&quot;,&quot;1&quot;,&quot;0&quot;,&quot;0&quot;,&quot;0&quot;],
-  [&quot;0&quot;,&quot;0&quot;,&quot;1&quot;,&quot;0&quot;,&quot;0&quot;],
-  [&quot;0&quot;,&quot;0&quot;,&quot;0&quot;,&quot;1&quot;,&quot;1&quot;]
+Input: grid = [
+  ["1","1","0","0","0"],
+  ["1","1","0","0","0"],
+  ["0","0","1","0","0"],
+  ["0","0","0","1","1"]
 ]
-<strong>Output:</strong> 3
-</pre>
+Output: 3
+```
 
-<p>&nbsp;</p>
-<p><strong>Constraints:</strong></p>
+## Approach
+**Key Insight**: Use DFS to traverse and mark connected '1's as visited.
 
-<ul>
-	<li><code>m == grid.length</code></li>
-	<li><code>n == grid[i].length</code></li>
-	<li><code>1 &lt;= m, n &lt;= 300</code></li>
-	<li><code>grid[i][j]</code> is <code>&#39;0&#39;</code> or <code>&#39;1&#39;</code>.</li>
-</ul>
+**Algorithm**:
+1. Iterate through each cell
+2. If '1', perform DFS to mark all connected '1's to '0'
+3. Increment count for each new island
+4. DFS explores 4 directions
+
+**Why this works**:
+- Visits each cell once
+- O(m*n) time
+- Modifies grid to mark visited
+
+## Complexity Analysis
+- **Time Complexity**: O(m*n)
+- **Space Complexity**: O(m*n) recursion stack worst case
+
+## Key Insights
+- Graph traversal on grid
+- 4-direction DFS
+- Modify grid to avoid visited array
+
+## Alternative Approaches
+1. **BFS**: Queue based
+2. **Union Find**: For connected components
+
+## Solutions in Different Languages
+
+### Java
+```java
+// ... code ...
+```
+
+### JavaScript
+```javascript
+// ... code ...
+```
+
+### Python
+```python
+# ... code ...
+```
+
+## Test Cases
+```
+Test Case 1: Above grid -> 1
+Test Case 2: Above grid -> 3
+```
+
+## Edge Cases
+1. Empty grid
+2. All water
+3. All land
+4. Single cell
+5. Checkerboard
+
+## Follow-up Questions
+1. What if count island perimeter?
+2. What if 8 directions?
+3. What if weighted lands?

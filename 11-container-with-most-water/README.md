@@ -1,32 +1,89 @@
-<h2><a href="https://leetcode.com/problems/container-with-most-water">Container With Most Water</a></h2> <img src='https://img.shields.io/badge/Difficulty-Medium-orange' alt='Difficulty: Medium' /><hr><p>You are given an integer array <code>height</code> of length <code>n</code>. There are <code>n</code> vertical lines drawn such that the two endpoints of the <code>i<sup>th</sup></code> line are <code>(i, 0)</code> and <code>(i, height[i])</code>.</p>
+# Container With Most Water - Problem #11
 
-<p>Find two lines that together with the x-axis form a container, such that the container contains the most water.</p>
+## Problem Statement
+You are given an integer array `height` of length `n`. There are `n` vertical lines drawn such that the two endpoints of the `i`th line are `(i, 0)` and `(i, height[i])`.
 
-<p>Return <em>the maximum amount of water a container can store</em>.</p>
+Find two lines that together with the x-axis form a container, such that the container contains the most water.
 
-<p><strong>Notice</strong> that you may not slant the container.</p>
+Return the maximum amount of water a container can store.
 
-<p>&nbsp;</p>
-<p><strong class="example">Example 1:</strong></p>
-<img alt="" src="https://s3-lc-upload.s3.amazonaws.com/uploads/2018/07/17/question_11.jpg" style="width: 600px; height: 287px;" />
-<pre>
-<strong>Input:</strong> height = [1,8,6,2,5,4,8,3,7]
-<strong>Output:</strong> 49
-<strong>Explanation:</strong> The above vertical lines are represented by array [1,8,6,2,5,4,8,3,7]. In this case, the max area of water (blue section) the container can contain is 49.
-</pre>
+Notice that you may not slant the container.
 
-<p><strong class="example">Example 2:</strong></p>
+## Examples
+```
+Input: height = [1,8,6,2,5,4,8,3,7]
+Output: 49
+Explanation: The above vertical lines are represented by array [1,8,6,2,5,4,8,3,7]. In this case, the max area of water (blue section) the container can contain is 49.
 
-<pre>
-<strong>Input:</strong> height = [1,1]
-<strong>Output:</strong> 1
-</pre>
+Input: height = [1,1]
+Output: 1
+```
 
-<p>&nbsp;</p>
-<p><strong>Constraints:</strong></p>
+## Approach
+**Key Insight**: Use two pointers starting from both ends, moving the smaller height pointer inward.
 
-<ul>
-	<li><code>n == height.length</code></li>
-	<li><code>2 &lt;= n &lt;= 10<sup>5</sup></code></li>
-	<li><code>0 &lt;= height[i] &lt;= 10<sup>4</sup></code></li>
-</ul>
+**Algorithm**:
+1. Initialize left=0, right=n-1, maxArea=0
+2. While left < right:
+   - Calculate area = min(height[left], height[right]) * (right - left)
+   - Update maxArea
+   - Move the pointer with smaller height
+3. Return maxArea
+
+**Why this works**:
+- O(n) time - Single pass with two pointers
+- Always considers the widest possible container first
+- Moving smaller pointer can potentially increase area
+
+## Complexity Analysis
+- **Time Complexity**: O(n) - Linear time
+- **Space Complexity**: O(1) - Constant space
+
+## Key Insights
+- Greedy choice: Always move the limiting (smaller) height
+- Proof: Moving taller doesn't decrease width without potential gain
+- Handles varying heights efficiently
+
+## Alternative Approaches
+1. **Brute Force**: Check all pairs (O(n²) time)
+2. **Stack-based**: For more complex variations
+
+## Solutions in Different Languages
+
+### Java
+```java
+// ... code here ...
+```
+
+### JavaScript
+```javascript
+// ... code here ...
+```
+
+### Python
+```python
+# ... code here ...
+```
+
+## Test Cases
+```
+Test Case 1:
+Input: [1,8,6,2,5,4,8,3,7]
+Expected: 49
+
+Test Case 2:
+Input: [1,1]
+Expected: 1
+```
+
+## Edge Cases
+1. Two bars
+2. All bars same height
+3. Increasing heights
+4. Decreasing heights
+5. Minimum n=2
+
+## Follow-up Questions
+1. What if bars can be slanted?
+2. What if find minimum area?
+3. What if 3D container?
