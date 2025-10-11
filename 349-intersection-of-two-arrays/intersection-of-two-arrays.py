@@ -34,5 +34,5 @@ class Solution(object):
         for x in intersection:
             result.append(x)
 
-        # Return the result
+        # Return the result.
         return result

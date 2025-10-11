@@ -24,7 +24,6 @@ Given two integer arrays nums1 and nums2, return an array of their intersection.
      • Else if nums1[i] > nums2[j]: j += 1
      • Else: append nums1[i] to result; i += 1; j += 1
 4. Return the result list.
-
 ## Complexity
 - **Time:**O(MlogM + NlogN)
 - **Space:** O(sorting)
