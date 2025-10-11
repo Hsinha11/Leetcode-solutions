@@ -1,5 +1,6 @@
 class Solution(object):
     def intersection(self, nums1, nums2):
+       
         """
         :type nums1: List[int]
         :type nums2: List[int]
@@ -14,7 +15,7 @@ class Solution(object):
         p1 = 0
         p2 = 0
 
-        # Create set that stores integers appearing in both arrays
+        # Create  a set that stores integers appearing in both arrays
         intersection = set()
 
         while p1 < N and p2 < M:

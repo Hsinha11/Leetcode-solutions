@@ -1,4 +1,4 @@
-from typing import List
+from typing import List # you can remove this line if you are running this in Leetcode environment
 
 class Solution:
     def intersect(self, nums1: List[int], nums2: List[int]) -> List[int]:
