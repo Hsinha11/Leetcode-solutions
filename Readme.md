@@ -13,6 +13,7 @@
 ![LeetCode](https://img.shields.io/badge/LeetCode-Solutions-brightgreen) ![Python](https://img.shields.io/badge/Python-3.10-blue) ![Hacktoberfest](https://img.shields.io/badge/Hacktoberfest-2025-orange)
 
 </div>
+
 Welcome to my **LeetCode solutions repository**! This is a comprehensive collection showcasing problem-solving journey across various topics and difficulty levels. **This repository is open for Hacktoberfest 2025 contributions!** 🎉
 
 ---
@@ -199,6 +200,7 @@ By participating in this project, you agree to maintain a respectful and inclusi
 **Happy Coding! Let's make this Hacktoberfest amazing together! 🚀**
 
 *Remember: The goal is to learn, contribute, and grow together as a community. Every contribution, no matter how small, makes a difference!*
+
 
 
 
