@@ -185,7 +185,7 @@ By participating in this project, you agree to maintain a respectful and inclusi
 - 🐛 **Found a bug?** Open an issue with details
 - ❓ **Have questions?** Check existing issues or create a new one
 - 💡 **Suggestions?** We'd love to hear your ideas!
-
+- 😢 **PR not approved?** I tend to approve most PRs at night, in case your PR doesn't get approved timely tag me @Hsinha11 in the comments and I shall approve it, if it is fit :)
 ---
 
 ## 📊 **Repository Stats**
@@ -200,6 +200,7 @@ By participating in this project, you agree to maintain a respectful and inclusi
 **Happy Coding! Let's make this Hacktoberfest amazing together! 🚀**
 
 *Remember: The goal is to learn, contribute, and grow together as a community. Every contribution, no matter how small, makes a difference!*
+
 
 
 
