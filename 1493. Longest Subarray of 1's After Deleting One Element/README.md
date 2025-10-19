@@ -2,7 +2,8 @@
 
 ## Status
 **Solved**  
-**Difficulty:** Medium
+**Difficulty:** Medium  
+**Languages:** Python, C++
 
 ## Description
 Given a binary array `nums`, you should delete one element from it.
@@ -38,5 +39,24 @@ Return the size of the longest non-empty subarray containing only 1's in the res
 ## Companies
 - [List of relevant companies]
 
-## Hint
-- [Add hint here if necessary]
+## Solution Approach
+
+### Algorithm
+This problem uses a **sliding window** technique with two pointers:
+1. **Expand Window**: Move right pointer to include new elements
+2. **Count Zeros**: Track the number of zeros in the current window
+3. **Shrink Window**: If more than one zero exists, move left pointer until at most one zero remains
+4. **Update Result**: Calculate window length (minus 1 for deletion) and update maximum
+
+### Key Insights
+- We can delete at most one element (zero) from the array
+- The longest subarray of 1's will be the window with at most one zero
+- After deletion, the window length becomes `right - left` (since we delete one element)
+
+### Complexity Analysis
+- **Time Complexity**: O(n) - Each element is visited at most twice
+- **Space Complexity**: O(1) - Only using constant extra space
+
+## Solution Files
+- `longest-subarray-of-1s-after-deleting-one -element.py` - Python implementation
+- `longest-subarray-of-1s-after-deleting-one-element.cpp` - C++ implementation with test cases
