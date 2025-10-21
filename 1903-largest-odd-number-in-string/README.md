@@ -57,5 +57,10 @@ Consider that we want the largest possible odd number. The largest number we can
 ## Implementation Details
 
 The solution uses:
-- String's `substr()` function for extracting the prefix
+- String's `substr()` function for extracting the prefix (C++)
 - Character to integer conversion ('0' subtraction) for checking odd/even
+- Python: `int()` conversion and string slicing for substring extraction
+
+## Solution Files
+- `largest-odd-number.cpp` - C++ implementation
+- `largest-odd-number-in-string.py` - Python implementation with comprehensive test cases
