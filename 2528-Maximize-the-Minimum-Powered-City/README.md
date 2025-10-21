@@ -1,7 +1,7 @@
 # 🏙️ Maximize the Minimum Powered City (LeetCode 2528)
 
 **Difficulty:** Hard  
-**Language:** Python  
+**Languages:** Python, C++  
 **Topic Tags:** Binary Search, Greedy, Prefix Sum, Difference Array, Sliding Window  
 
 ---
@@ -44,3 +44,27 @@ k = 2
 - The minimum power = **5**.
 
 No better configuration exists.
+
+---
+
+## 🚀 Solution Approach
+
+### Algorithm
+1. **Compute Initial Power**: Use prefix sums to calculate each city's initial power in O(n)
+2. **Binary Search**: Search for the maximum feasible minimum power value
+3. **Greedy Validation**: For each candidate value, use difference array technique to simulate adding stations optimally
+4. **Range Updates**: When adding stations at position i, they affect cities from i to i+2r
+
+### Key Techniques
+- **Prefix Sum**: O(1) range sum queries for initial power calculation
+- **Difference Array**: Efficient range updates for simulating station additions
+- **Binary Search**: Find maximum feasible minimum power value
+- **Greedy Strategy**: Always add stations to the leftmost city that needs them
+
+### Complexity Analysis
+- **Time Complexity**: O(n log(max_power + k))
+- **Space Complexity**: O(n)
+
+## 📁 Solution Files
+- `2528-Maximize-the-Minimum-Powered-City.py` - Python implementation
+- `2528-Maximize-the-Minimum-Powered-City.cpp` - C++ implementation with test cases
