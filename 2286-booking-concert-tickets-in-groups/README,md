@@ -1,0 +1,4 @@
+### 2286-booking-concert-tickets-in-groups
+
+**Approach:** Maintain next-free-seat per row + segment tree storing per-range sum and max to support gather and scatter.  
+**Complexity:** Time O(n), Space O(n)
