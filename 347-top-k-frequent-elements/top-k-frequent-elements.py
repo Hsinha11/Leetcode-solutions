@@ -5,8 +5,6 @@ class Solution:
         heap = []
         for i in d:
             heapq.heappush(heap,(d[i],i))
-            while len(heap)>k:
-                heapq.heappop(heap)
-        for i in heap:
+        for i in heapq.nlargest(k,heap):
             ans.append(i[1])
         return ans
