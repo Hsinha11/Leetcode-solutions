@@ -12,6 +12,8 @@ class Solution:
         
         if not root:return 0
         mx = 0
+        if root in d:return d[root]
         for i in root.children:
             mx = max(mx,self.maxDepth(i))
-        return 1+mx
+        d[root]=1+mx
+        return d[root]
