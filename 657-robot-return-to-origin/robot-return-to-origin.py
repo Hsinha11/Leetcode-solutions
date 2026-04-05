@@ -5,11 +5,11 @@ class Solution:
         for i in moves:
             if i =="U":
                 y+=1
-            if i=="D":
+            elif i=="D":
                 y-=1
-            if i=="L":
+            elif i=="L":
                 x-=1
-            if i=="R":
+            elif i=="R":
                 x+=1
         return x==0 and y==0
         
